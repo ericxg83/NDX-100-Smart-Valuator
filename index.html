@@ -11,22 +11,6 @@
         font-family: 'Inter', sans-serif;
         background-color: #0f172a; /* Slate 900 */
         color: #e2e8f0; /* Slate 200 */
-        margin: 0;
-        padding: 20px;
-        min-height: 100vh;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .loading {
-        text-align: center;
-        padding: 50px;
-        font-size: 18px;
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
@@ -46,71 +30,19 @@
   <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.2.0/client",
-    "@google/genai": "https://esm.sh/@google/genai@1.30.0",
-    "recharts": "https://esm.sh/recharts@3.4.1",
-    "lucide-react": "https://esm.sh/lucide-react@0.554.0"
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root">
-      <div class="container">
-        <div class="header">
-          <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;">纳斯达克100指数每日估值系统</h1>
-          <p style="font-size: 1.2rem; opacity: 0.8;">实时监控纳斯达克100指数估值数据</p>
-        </div>
-        <div class="loading">
-          <p>正在加载应用程序...</p>
-          <p style="font-size: 0.9rem; opacity: 0.6;">如果长时间未加载，请检查浏览器控制台错误信息</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 备用基础内容 -->
-    <noscript>
-      <div style="text-align: center; padding: 50px;">
-        <h2>请启用JavaScript以使用此应用</h2>
-      </div>
-    </noscript>
-    
-    <script type="module">
-      // 简单的React应用作为备用
-      import React from 'react';
-      import { createRoot } from 'react-dom/client';
-      
-      function App() {
-        return React.createElement('div', { className: 'container' },
-          React.createElement('div', { className: 'header' },
-            React.createElement('h1', { style: { fontSize: '2.5rem', fontWeight: '700', marginBottom: '10px' } }, 
-              '纳斯达克100指数每日估值系统'),
-            React.createElement('p', { style: { fontSize: '1.2rem', opacity: '0.8' } }, 
-              '实时监控纳斯达克100指数估值数据')
-          ),
-          React.createElement('div', { style: { textAlign: 'center', padding: '50px', background: '#1e293b', borderRadius: '10px', marginTop: '20px' } },
-            React.createElement('h2', { style: { marginBottom: '20px' } }, '应用加载中...'),
-            React.createElement('p', { style: { opacity: '0.7' } }, '正在初始化数据可视化组件')
-          )
-        );
-      }
-      
-      try {
-        const root = createRoot(document.getElementById('root'));
-        root.render(React.createElement(App));
-      } catch (error) {
-        console.error('React渲染错误:', error);
-        document.getElementById('root').innerHTML = `
-          <div class="container">
-            <div style="text-align: center; padding: 50px; background: #7f1d1d; border-radius: 10px; margin-top: 20px;">
-              <h2>应用初始化失败</h2>
-              <p>错误详情: ${error.message}</p>
-              <p>请刷新页面或检查浏览器控制台</p>
-            </div>
-          </div>
-        `;
-      }
-    </script>
-  </body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
