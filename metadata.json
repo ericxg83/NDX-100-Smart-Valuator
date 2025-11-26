@@ -1,0 +1,5 @@
+{
+  "name": "NDX-100 Smart Valuator",
+  "description": "An AI-powered decision support system for NASDAQ 100 index fund entry, analyzing valuation metrics and market sentiment.",
+  "requestFramePermissions": []
+}
